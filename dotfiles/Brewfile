@@ -1,0 +1,86 @@
+begin
+    # https://github.com/Homebrew/homebrew-bundle/issues/521
+    eval(IO.read(File.expand_path('~/.Brewfile.local')), binding)
+rescue Errno::ENOENT => exception
+    puts "No local ~/.Brewfile.local"
+end
+
+brew 'ack'
+brew 'adr-tools'
+brew 'aria2'
+brew 'awscli'
+brew 'bash-completion'
+brew 'chruby'
+brew 'coreutils'
+brew 'cowsay'
+brew 'direnv'
+brew 'eksctl'
+brew 'findutils'
+brew 'fish'
+brew 'git'
+brew 'git-crypt'
+brew 'git-secrets'
+brew 'gnuplot'
+brew 'go'
+brew 'gpg'
+brew 'htop'
+brew 'jq'
+brew 'jsonnet'
+brew 'mas'
+brew 'libyaml' # Only needed for installing ruby on high sierra
+brew 'mysql-client', link: true
+brew 'neovim'
+brew 'nmap'
+brew 'node'
+brew 'openssl'
+brew 'postgresql'
+brew 'proxychains-ng'
+brew 'pstree'
+brew 'pv'
+brew 'python3'
+brew 'qt'
+brew 'rg'
+brew 'ruby'
+brew 'rustup-init'
+brew 's3cmd'
+brew 'shellcheck'
+brew 'ssh-copy-id'
+brew 'stern'
+brew 'terraform'
+brew 'the_platinum_searcher'
+brew 'the_silver_searcher'
+brew 'tig'
+brew 'tldr'
+brew 'tmux'
+brew 'tree'
+brew 'watch'
+brew 'wget'
+brew 'yq'
+brew 'z'
+
+# Replace Darwin utilities with GNU for compatibility with Linux
+brew 'gnu-indent'
+brew 'gnu-sed'
+brew 'gnu-tar'
+brew 'gnu-which'
+brew 'gnutls'
+brew 'ed'
+brew 'findutils'
+brew 'grep'
+
+cask_args force: true
+cask 'flycut'
+cask 'google-chrome'
+cask 'google-cloud-sdk'
+cask 'istat-menus'
+cask 'iterm2'
+
+brew 'minio-mc'
+
+# Carvel tools
+brew 'ytt'
+brew 'kbld'
+brew 'kapp'
+brew 'imgpkg'
+brew 'kwt'
+brew 'vendir'

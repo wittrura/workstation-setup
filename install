@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Enter the sudo password so that install scripts that need sudo will have permission"
+sudo echo "Entered sudo password so we don't have to reenter it later"
+
+if [[ "$SHELL" == *"zsh"* ]] ; then
+  cat <<-EOF
+
+!! WARNING: 'zsh' detected.
+
+'zsh' is the default shell, starting with macOS catalina.
+However, this install script is intended to be ran in bash.
+You can change the default shell type to bash by:
+  1) Running 'chsh -s /bin/bash'
+  2) Closing & reopening iTerm
+
+EOF
+  exit 1
+fi
+
+DIR="$(dirname "${BASH_SOURCE[0]}")"
+
+for file in $DIR/install-scripts/*; do
+  if [ ! -d ./$file ]; then
+    ./$file
+  fi
+done
