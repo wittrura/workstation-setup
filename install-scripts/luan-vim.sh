@@ -11,11 +11,4 @@ pushd ~/workspace/
   set +e
   git clone https://github.com/luan/nvim ~/.config/nvim
   set -e
-
-  # Dependencies for NeoVim and the Deoplete plugin
-  # Sometimes NeoVim complains about the Python provider. Running this usually
-  # fixes it. These commands come from NeoVim's :checkhealth command.
-  pip3 uninstall -y pynvim neovim
-  pip3 install pynvim
-  pip3 install neovim
 popd

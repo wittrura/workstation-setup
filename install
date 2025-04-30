@@ -2,9 +2,6 @@
 
 set -e
 
-echo "Enter the sudo password so that install scripts that need sudo will have permission"
-sudo echo "Entered sudo password so we don't have to reenter it later"
-
 if [[ "$SHELL" == *"zsh"* ]] ; then
   cat <<-EOF
 
